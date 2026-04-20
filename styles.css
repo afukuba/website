@@ -257,6 +257,22 @@ main {
 }
 .prose p a:hover, a.link:hover { background-size: 100% 100%; }
 
+/* Dense / metadata contexts: the highlight band misreads as strikethrough at
+   smaller type, so swap to a primary-coloured underline. */
+.factlist .link, .cv__id-list .link {
+  background: none;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: auto;
+}
+.factlist .link:hover, .cv__id-list .link:hover {
+  background: none;
+  text-decoration-thickness: 3px;
+}
+
 .about__card {
   background: var(--color-white);
   border: 3px solid var(--color-ink);
