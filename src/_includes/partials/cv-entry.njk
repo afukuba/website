@@ -1,0 +1,16 @@
+<div class="cv__entry{% if tight %} cv__entry--tight{% endif %}">
+  <div class="cv__when">{{ entry.when }}</div>
+  <div class="cv__body">
+    <div class="cv__where">{{ entry.where }}{% if entry.location %} <span class="cv__loc">· {{ entry.location }}</span>{% endif %}</div>
+    <div class="cv__role">{{ entry.role }}</div>
+    {%- if entry.bullets %}
+    <ul class="cv__list">
+      {%- for b in entry.bullets %}
+      <li>{{ b | safe }}</li>
+      {%- endfor %}
+    </ul>
+    {%- elif entry.desc %}
+    <p class="cv__desc">{{ entry.desc }}</p>
+    {%- endif %}
+  </div>
+</div>
