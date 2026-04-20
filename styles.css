@@ -527,9 +527,11 @@ main {
   justify-content: center;
   min-height: 170px;
   transform: translate(var(--tx), var(--ty)) rotate(calc(var(--base-rot) + var(--wob)));
-  transition: transform .45s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease;
+  transition: box-shadow .25s ease;
   will-change: transform;
+  cursor: default;
 }
+.axiom p { cursor: default; }
 .axiom:nth-child(1) { --base-rot: -1.5deg; }
 .axiom:nth-child(2) { --base-rot: 1deg; background: var(--color-primary-dim); }
 .axiom:nth-child(3) { --base-rot: -.5deg; }
