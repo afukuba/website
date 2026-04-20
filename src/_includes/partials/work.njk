@@ -1,0 +1,26 @@
+<article class="work{% if work.variant %} work--{{ work.variant }}{% endif %}">
+  <div class="work__idx"><span>№</span><span class="n">{{ work.idx }}</span></div>
+  <div class="work__body">
+    <h3><a href="{{ work.href }}" target="_blank" rel="noopener">{{ work.title }}</a></h3>
+    <p class="work__meta">{%- if work.meta.prefix %}{{ work.meta.prefix }}{% endif -%}
+      <span class="names">
+        {%- for n in work.meta.names -%}
+          {%- if n.url -%}<a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.name }}</a>
+          {%- else -%}{{ n.name }}
+          {%- endif -%}
+          {%- if not loop.last %}, {% endif -%}
+        {%- endfor -%}
+      </span>{%- if work.meta.suffix %}{{ work.meta.suffix }}{% endif -%}</p>
+    <p class="work__abs">{{ work.abstract | safe }}</p>
+    <div class="work__tags">
+      {%- for tag in work.tags %}
+      <span class="tag{% if tag.variant %} tag--{{ tag.variant }}{% endif %}">{{ tag.text }}</span>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="work__aside">
+    <span class="work__year">{{ work.year }}</span>
+    <span class="work__type">{{ work.kind }}</span>
+    <a class="work__cta" href="{{ work.cta.href }}" target="_blank" rel="noopener"><span class="material-symbols-outlined">{{ work.cta.icon }}</span> {{ work.cta.label }}</a>
+  </div>
+</article>

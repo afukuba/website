@@ -1,0 +1,11 @@
+# Site-wide settings used in the header, footer, and page metadata.
+# Edit these and every page updates automatically.
+
+title: "Patrick O’Melveny — Mathematician"
+author: "Patrick O’Melveny"
+email: "p0@uw.edu"
+github: "https://github.com/pvomelveny"
+
+brand:
+  mark: "∑ P.O.M."    # small monogram shown top-left
+  name: "Patrick O’Melveny"
