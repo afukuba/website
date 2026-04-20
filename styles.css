@@ -512,17 +512,32 @@ main {
   gap: 18px;
 }
 .axiom {
+  --base-rot: 0deg;
+  --tx: 0px;
+  --ty: 0px;
+  --wob: 0deg;
   background: var(--color-cream);
   color: var(--color-ink);
   border: 3px solid var(--color-ink);
   box-shadow: 5px 5px 0 var(--color-ink);
   padding: 18px 18px 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 170px;
+  transform: translate(var(--tx), var(--ty)) rotate(calc(var(--base-rot) + var(--wob)));
+  transition: transform .45s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease;
+  will-change: transform;
 }
-.axiom:nth-child(1) { transform: rotate(-1.5deg); }
-.axiom:nth-child(2) { transform: rotate(1deg); background: var(--color-primary-dim); }
-.axiom:nth-child(3) { transform: rotate(-.5deg); }
-.axiom:nth-child(4) { transform: rotate(1.5deg); background: var(--color-sage-dim); }
+.axiom:nth-child(1) { --base-rot: -1.5deg; }
+.axiom:nth-child(2) { --base-rot: 1deg; background: var(--color-primary-dim); }
+.axiom:nth-child(3) { --base-rot: -.5deg; }
+.axiom:nth-child(4) { --base-rot: 1.5deg; background: var(--color-sage-dim); }
+.axiom:hover { box-shadow: 8px 8px 0 var(--color-ink); }
+@media (prefers-reduced-motion: reduce) {
+  .axiom { transition: none; --tx: 0px; --ty: 0px; --wob: 0deg; }
+}
 .axiom__n {
   position: absolute; top: -14px; left: -14px;
   width: 32px; height: 32px;
