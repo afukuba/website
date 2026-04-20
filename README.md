@@ -30,11 +30,12 @@ aws s3 sync ./ s3://pvomelveny.com \
 
 ```text
 index.html           — home + works (single page, hash-routed)
-styles.css           — page styles
+styles.css           — shared page styles
 colors_and_type.css  — design system tokens (colors, typography, spacing)
-script.js            — hash router
+script.js            — home/works hash router
 fonts/               — Yuji Syuku (display) + Karla (body)
 img/                 — photos
 papers/              — paper PDFs
-cv/                  — CV PDF
+cv/index.html        — CV page
+cv/omelveny-cv.pdf   — CV PDF
 ```

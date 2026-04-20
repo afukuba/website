@@ -227,6 +227,7 @@ main {
   box-shadow: 3px 3px 0 var(--color-ink);
   font-weight: 700;
 }
+.section-head h1,
 .section-head h2 {
   font-family: var(--font-display);
   font-size: clamp(32px,4.2vw,48px);
@@ -553,6 +554,218 @@ footer {
 }
 .foot__links a:hover { border-color: var(--color-primary); }
 
+/* ------- CV page ------- */
+.cv { padding: 56px 0 80px; }
+.cv__top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 8px 0 40px;
+  padding: 24px 28px;
+  background: var(--color-white);
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+.cv__name {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: -.01em;
+}
+.cv__id-list { list-style: none; margin: 0; padding: 0; }
+.cv__id-list li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 15px;
+  border-top: 1.5px dashed var(--color-ink);
+}
+.cv__id-list li:first-child { border-top: none; }
+.cv__id-list .k {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 3px;
+  opacity: .75;
+}
+.cv__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.cv__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: var(--color-primary);
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: transform 120ms var(--md-sys-motion-easing-standard),
+              box-shadow 120ms var(--md-sys-motion-easing-standard);
+}
+.cv__btn:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 var(--color-ink); }
+.cv__btn:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--color-ink); }
+.cv__btn--ghost { background: var(--color-cream); }
+.cv__btn .material-symbols-outlined { font-size: 18px; }
+.cv__note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: .7;
+  margin: 6px 0 0;
+}
+
+.cv__block { margin-bottom: 40px; }
+.cv__h {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -.005em;
+  margin: 0 0 16px;
+  padding: 6px 14px;
+  background: var(--color-primary);
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  display: inline-block;
+}
+.cv__entry {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  padding: 14px 0 16px;
+  border-top: 2px solid var(--color-ink);
+}
+.cv__entry:first-of-type { border-top: 3px solid var(--color-ink); }
+.cv__entry--tight { padding: 10px 0 11px; }
+.cv__when {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 2px;
+}
+.cv__where {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -.005em;
+}
+.cv__loc {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+.cv__role {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  opacity: .85;
+  margin-top: 2px;
+  font-style: italic;
+}
+.cv__list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+.cv__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 6px;
+  text-wrap: pretty;
+}
+.cv__list li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.cv__desc {
+  margin: 8px 0 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-width: 64ch;
+}
+.cv__twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.cv__conflist { list-style: none; margin: 0; padding: 0; }
+.cv__conflist li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14.5px;
+  border-top: 1.5px dashed var(--color-ink);
+}
+.cv__conflist li:first-child { border-top: none; }
+.cv__conflist .y {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .12em;
+  padding-top: 3px;
+  opacity: .8;
+}
+.cv__skills { display: flex; flex-direction: column; gap: 12px; }
+.cv__skillrow {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 10px 0;
+  border-top: 2px dashed var(--color-ink);
+}
+.cv__skillrow:first-child { border-top: 3px solid var(--color-ink); }
+.cv__skillkey {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 4px;
+}
+.cv__skillvals { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Print */
+@media print {
+  body.page-cv::before { display: none; }
+  body.page-cv .nav,
+  body.page-cv footer,
+  body.page-cv .axioms,
+  body.page-cv .cv__actions { display: none !important; }
+  body.page-cv .cv { padding: 0; }
+  body.page-cv .cv__top,
+  body.page-cv .cv__h { box-shadow: none; }
+}
+
 /* ------- Page transitions ------- */
 [data-page] { display: none; animation: fadeIn 220ms var(--md-sys-motion-easing-standard); }
 [data-page].is-visible { display: block; }
@@ -566,6 +779,10 @@ footer {
   .axioms__grid { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
   .work         { grid-template-columns: 1fr; }
   .work__aside  { flex-direction: row; align-items: center; min-width: 0; }
+  .cv__top      { grid-template-columns: 1fr; }
+  .cv__entry    { grid-template-columns: 1fr; gap: 4px; }
+  .cv__skillrow { grid-template-columns: 1fr; gap: 6px; }
+  .cv__twocol   { grid-template-columns: 1fr; gap: 24px; }
   .nav__inner   { padding: 14px 20px; }
   .brand__name  { font-size: 24px; }
   .container    { padding: 0 20px; }
