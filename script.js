@@ -28,9 +28,9 @@ route();
   const cards = document.querySelectorAll('.axiom');
   if (!cards.length) return;
 
-  const MAX_SHIFT = 5;    // px — stay within a few points
-  const MAX_WOBBLE = 1.2; // deg, layered on top of base rotation
-  const EASE = 0.07;      // low = sluggish, hyper-smooth drift
+  const MAX_SHIFT = 7;    // px — stay within a few points
+  const MAX_WOBBLE = 1.8; // deg, layered on top of base rotation
+  const EASE = 0.1;       // low = sluggish, hyper-smooth drift
 
   const state = new Map();
   cards.forEach(card => state.set(card, { tx: 0, ty: 0, wob: 0, targetX: 0, targetY: 0, targetW: 0, active: false }));
