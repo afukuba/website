@@ -39,14 +39,56 @@ npm run build    # writes _site/
 
 ## Deploy
 
-Sync the `_site/` build output to S3:
+Pushes to the `trunk` branch deploy automatically via GitHub Actions
+(see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
+Edit a YAML file on github.com → click **Commit changes** → the site is
+live in roughly 30 seconds.
 
-```sh
-npm run build
-aws s3 sync _site/ s3://pvomelveny.com --delete
-```
+If a deploy fails (for example, malformed YAML), the previously deployed
+version stays up. The failure shows on the **Actions** tab of the repo
+next to the offending commit. Open the failed run to see the error,
+then push a fix.
 
-`_site/` contains only the files that should be served.
+You can also trigger a deploy manually: **Actions** tab → **Build and
+deploy site** workflow → **Run workflow**.
+
+### One-time setup (after the upstream PR merges)
+
+Done once by the repo owner in repo settings:
+
+1. **Settings → Pages → Build and deployment → Source**: choose
+   **GitHub Actions**.
+2. Push any commit to `trunk` (or run the workflow manually) to confirm
+   the first deploy succeeds. The site will be live at
+   `https://<owner>.github.io/<repo>/`.
+
+### Custom domain
+
+The site is currently served at `pvomelveny.com` via AWS. To move the
+custom domain onto GitHub Pages:
+
+1. **Confirm the GitHub Pages URL works first** at
+   `https://<owner>.github.io/<repo>/`. Don't change DNS until this is
+   green.
+2. **Repo → Settings → Pages → Custom domain**: enter `pvomelveny.com`
+   and save. GitHub writes a `CNAME` file into the deployed site;
+   leave it there.
+3. **Update DNS** at the domain registrar to point at GitHub Pages:
+   - For the apex (`pvomelveny.com`), set **A** records to GitHub's
+     Pages IPs:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - For `www`, set a **CNAME** record pointing to
+     `<owner>.github.io` (no path, no trailing slash).
+   - Remove the existing AWS / CloudFront records for the same names.
+4. **Wait for HTTPS provisioning**. Once DNS resolves to GitHub,
+   the **Settings → Pages** screen offers an **Enforce HTTPS** checkbox
+   — tick it once it's available (usually within a few minutes to an
+   hour after DNS propagates).
+5. **Tear down AWS** once the site has been observed healthy on the
+   new host for a burn-in period (a couple of weeks is reasonable).
 
 ## Layout
 
