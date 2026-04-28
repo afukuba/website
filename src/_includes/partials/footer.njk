@@ -1,0 +1,20 @@
+{%- set is_home = (page_name == "home") -%}
+{%- set home_href = is_home and "#home" or "../index.html#home" -%}
+{%- set works_href = is_home and "#works" or "../index.html#works" -%}
+{%- set cv_href = is_home and "cv/" or "./" -%}
+<!-- ─────── FOOTER ─────── -->
+<footer>
+  <div class="foot">
+    <div class="foot__left">
+      <span class="glyph">∞</span>
+      <span>{{ site.author }}</span>
+    </div>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="{{ home_href }}"{% if is_home %} data-nav="home"{% endif %}>Home</a>
+      <a href="{{ works_href }}"{% if is_home %} data-nav="works"{% endif %}>Works</a>
+      <a href="{{ cv_href }}"{% if page_name == 'cv' %} aria-current="page"{% endif %}>CV</a>
+      <a href="mailto:{{ site.email }}">Email</a>
+      <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>

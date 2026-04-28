@@ -1,0 +1,193 @@
+# Content for the CV page. Each section below is rendered as a "block"
+# on the page, in the order they appear here. Standard sections use
+# `entries`; a few (conferences, skills) use slightly different shapes.
+#
+# Plain text is safe to edit. Fields ending in `_html` accept inline HTML.
+# Some compound words use a non-breaking hyphen (‑, U+2011).
+
+id:
+  name: "Patrick V. O’Melveny"
+  items:
+    - { key: "Affiliation", value_html: "PhD student, Mathematics, University of Washington" }
+    - { key: "Based",       value_html: "Seattle, WA" }
+    - { key: "Email",       value_html: '<a class="link" href="mailto:p0@uw.edu">p0@uw.edu</a>' }
+    - { key: "Web",         value_html: '<a class="link" href="../index.html#home">pvomelveny.com</a>' }
+    - { key: "Updated",     value_html: "Apr 19, 2026" }
+
+actions:
+  pdf_href: "omelveny-cv.pdf"
+  pdf_label: "Download older PDF"
+  note: "The HTML CV below is current. The downloadable PDF still reflects older information and will be updated later."
+
+education:
+  heading: "Education"
+  glyph: "∈"
+  entries:
+    - when: "Expected 2027"
+      where: "University of Washington"
+      location: "Seattle, WA"
+      role: "Doctor of Philosophy (Ph.D.) in Mathematics"
+    - when: "2023"
+      where: "San Francisco State University"
+      location: "San Francisco, CA"
+      role: "Master of Arts in Mathematics"
+    - when: "2014"
+      where: "Sonoma State University"
+      location: "Rohnert Park, CA"
+      role: "Bachelor of Arts in Music Composition"
+
+research:
+  heading: "Research"
+  glyph: "∫"
+  entries:
+    - when: "2023 → Current"
+      where: "University of Washington"
+      location: "Seattle, WA"
+      role: "Ph.D. Student in Mathematics"
+      bullets:
+        - "Research interests in combinatorics, algebraic geometry, and topology."
+        - "Teach undergraduate mathematics and serve as a Graduate Student Representative."
+    - when: "Jul 2021 → Current"
+      where: "Mixed Volumes of Normal Complexes"
+      role: "Collaborative project with Lauren Nowak and Dusty Ross"
+      bullets:
+        - >-
+          Developed a theory of mixed volumes on truncations of tropical fans, called <em>normal
+          complexes</em>, and extended the relationship between their (mixed) volume and (mixed) degrees of
+          divisors of the corresponding Chow ring.
+        - >-
+          Used the theory of mixed volumes of normal complexes to provide a volume‑theoretic proof of
+          the Heron–Rota–Welsh conjecture on the log‑concavity of characteristic polynomials of matroids.
+
+teaching:
+  heading: "Teaching"
+  glyph: "∂"
+  tight: true
+  entries:
+    - { when: "Summer 2025", where: "MATH 224 A — Advanced Multivariable Calculus",  role: "University of Washington" }
+    - { when: "Winter 2025", where: "MATH 125 EE & EF — Calculus with Analytic Geometry II",  role: "University of Washington" }
+    - { when: "Autumn 2024", where: "MATH 126 EC & ED — Calculus with Analytic Geometry III", role: "University of Washington" }
+    - { when: "Summer 2024", where: "MATH 124 AA & AB — Calculus with Analytic Geometry I",   role: "University of Washington" }
+    - { when: "Spring 2024", where: "MATH 126 DE & DF — Calculus with Analytic Geometry III", role: "University of Washington" }
+    - { when: "Winter 2024", where: "MATH 124 CE & CF — Calculus with Analytic Geometry I",   role: "University of Washington" }
+    - { when: "Autumn 2023", where: "MATH 124 GC & GD — Calculus with Analytic Geometry I",   role: "University of Washington" }
+    - { when: "Fall 2022",   where: "MATH 123 — Mathematics for Elementary Statistics",       role: "San Francisco State University" }
+    - { when: "Spring 2022", where: "MATH 198 — Prelude to Calculus, Semester II",            role: "San Francisco State University" }
+    - { when: "Fall 2021",   where: "MATH 197 — Prelude to Calculus, Semester I",             role: "San Francisco State University" }
+    - { when: "Fall 2021, Fall 2022", where: "MATH 228 Supplemental — Calculus I Lab",        role: "San Francisco State University" }
+
+experience:
+  heading: "Professional experience"
+  glyph: "∑"
+  entries:
+    - when: "2022 → 2023"
+      where: "San Francisco State University"
+      location: "San Francisco, CA"
+      role: "Research Assistant — Math Curriculum Development"
+      bullets:
+        - "Work with Dr. Kimberly Seashore on developing an innovative curriculum for San Francisco State’s Calculus I supplementary lab."
+        - "Adapt and develop labs that center group work while reinforcing core concepts in calculus."
+    - when: "Jun 2022 → Current"
+      where: "Stanford University"
+      location: "Palo Alto, CA"
+      role: "Technical Consultant & Developer"
+      bullets:
+        - "Consult on the technical implementation of the curriculum for a data science class for high school students."
+        - "Develop code supporting and used by students in the data science course."
+    - when: "2021 → 2023"
+      where: "San Francisco State University"
+      location: "San Francisco, CA"
+      role: "Research Assistant — Mathematical Research"
+      bullets:
+        - "Perform research under the guidance of Dr. Dustin Ross on the relationship between tropical fans and the divisors of their Chow ring."
+        - "Supported by NSF RUI: <em>Compactifying moduli spaces of orbits, covers, and curves</em>."
+    - when: "2021 → 2023"
+      where: "San Francisco State University"
+      location: "San Francisco, CA"
+      role: "Graduate Teaching Associate"
+      bullets:
+        - "Instructor of record for undergraduate precalculus and statistics classes."
+    - when: "Jan 2017 → Jun 2021"
+      where: "Posit Science Corporation"
+      location: "San Francisco, CA"
+      role: "Software Engineer"
+      bullets:
+        - "Developed software for the needs of multiple research studies on neuroplasticity."
+        - "Maintained and extended data pipelines, allowing for efficient and secure access to clinical data."
+        - "Developed back‑end event scheduling systems and data models for efficient distributed computing."
+    - when: "Jul 2015 → Jan 2017"
+      where: "Posit Science Corporation"
+      location: "San Francisco, CA"
+      role: "Research Associate & Data Analyst"
+      bullets:
+        - "Created in‑house tools for automation of R&D tasks, including study measure analytics, reporting dashboards, graphing tools, and study‑flow monitoring."
+        - "Performed exploratory data analysis for research studies and produced graphs and figures for publications."
+        - "Coordinated multi‑site research trial, maintaining compliance with FDA regulations for Phase II clinical research."
+    - when: "Mar 2014 → Jul 2015"
+      where: "Northern California Institute for Research & Education"
+      location: "San Francisco, CA"
+      role: "Research Associate II"
+      bullets:
+        - "Coordinated and ran fMRI experiments exploring the relation of neurotransmitters and social cognition in schizophrenia."
+        - "Developed analysis pipelines for data collected in the course of fMRI and MEG experiments."
+    - when: "Sep 2011 → Aug 2013"
+      where: "Sonoma State University"
+      location: "Rohnert Park, CA"
+      role: "Instructional Student Assistant"
+      bullets:
+        - "Tutored students in Music Theory I–IV, Music History, and Ear Training."
+
+presentations:
+  heading: "Presentations"
+  glyph: "≈"
+  tight: true
+  entries:
+    - when: "2022"
+      where: "Mixed Volumes of Normal Complexes"
+      role: "Western Algebraic Geometry Symposium, Fall ’22 — Poster Session"
+
+conferences:
+  heading: "Conferences attended"
+  glyph: "π"
+  items:
+    - { year: "2022", text_html: "Western Algebraic Geometry Symposium, Fall ’22 — UC Riverside" }
+    - { year: "2022", text_html: "Spec(ℚ) — Fields Institute" }
+    - { year: "2022", text_html: "Western Algebraic Geometry Symposium, Spring ’22 — Colorado State University" }
+
+outreach:
+  heading: "Outreach"
+  glyph: "∇"
+  entries:
+    - when: "Aug 2020 → Current"
+      where: "Mathematistas"
+      location: "San Francisco, CA"
+      role: "Member, Facilitation Team"
+      desc: "A student community that supports and builds towards gender equity in pursuit of higher mathematics."
+    - when: "Feb 2019 → Current"
+      where: "Learning Home Volunteers"
+      location: "Redwood City, CA"
+      role: "Volunteer"
+      desc: "A non‑profit working to address the kindergarten‑readiness gap by empowering parents to engage their young children in joyful learning through play."
+
+skills:
+  heading: "Technical skills"
+  glyph: "∂"
+  rows:
+    - key: "Programming"
+      values:
+        - { text: "C++" }
+        - { text: "Python" }
+        - { text: "R" }
+        - { text: "Haskell" }
+        - { text: "LaTeX" }
+    - key: "Software"
+      values:
+        - { text: "Linux" }
+        - { text: "Git" }
+        - { text: "Cloud & Web Hosting" }
+        - { text: "Mathematica" }
+        - { text: "SageMath" }
+    - key: "Languages"
+      values:
+        - { text: "English · native",           variant: "hot" }
+        - { text: "French · limited working",   variant: "teal" }

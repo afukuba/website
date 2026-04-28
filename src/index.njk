@@ -1,0 +1,90 @@
+---
+layout: layouts/base.njk
+permalink: /index.html
+page_name: home
+css_prefix: ""
+include_script: true
+---
+
+<!-- ─────── HOME ─────── -->
+<section data-page="home" data-screen-label="Home">
+  <div class="container hero">
+    <div class="hero__row">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> {{ home.hero.eyebrow }}</span>
+        <h1>
+          {{ home.hero.heading.prefix }}<span class="accent">{{ home.hero.heading.accent }}</span>{{ home.hero.heading.suffix }}
+        </h1>
+        {%- for para in home.hero.lede %}
+        <p class="hero__lede">
+          {{ para | safe }}
+        </p>
+        {%- endfor %}
+        <div class="hero__meta">
+          {%- for chip in home.hero.chips %}
+          <span class="chip{% if chip.variant %} chip--{{ chip.variant }}{% endif %}">{{ chip.text }}</span>
+          {%- endfor %}
+        </div>
+      </div>
+      <div class="portrait" aria-label="{{ home.hero.portrait.aria_label }}">
+        <div class="portrait__bg"></div>
+        <img src="{{ home.hero.portrait.src }}" alt="{{ home.hero.portrait.alt }}"
+          class="portrait__img" />
+        <span class="portrait__caption">{{ home.hero.portrait.caption }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container about">
+    <div class="section-head">
+      <span class="kicker">{{ home.about.kicker }}</span>
+      <h2>{{ home.about.heading }}</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="about__grid">
+      <div class="prose">
+        {%- for para in home.about.prose_html %}
+        <p>
+          {{ para | safe }}
+        </p>
+        {%- endfor %}
+      </div>
+      <aside class="about__card">
+        <h3>{{ home.about.facts_heading }} <span class="glyph">{{ home.about.facts_glyph }}</span></h3>
+        <ul class="factlist">
+          {%- for f in home.about.facts %}
+          <li><span class="k">{{ f.key }}</span><span class="v">{{ f.value_html | safe }}</span></li>
+          {%- endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── WORKS ─────── -->
+<section data-page="works" data-screen-label="Works">
+  <div class="container works">
+    <div class="section-head">
+      <span class="kicker">{{ home.works.kicker }}</span>
+      <h2>{{ home.works.heading }}</h2>
+      <span class="rule"></span>
+    </div>
+    <p class="works__intro">
+      {{ home.works.intro | safe }}
+    </p>
+
+    {%- for group in home.works.groups %}
+    <div class="group">
+      <header class="group__head">
+        <span class="group__count">{{ group.count }}</span>
+        <h3 class="group__title">{{ group.title }}</h3>
+        <span class="group__sym">{{ group.glyph }}</span>
+      </header>
+
+      {%- for work in group.items %}
+      {% include "partials/work.njk" %}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>

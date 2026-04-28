@@ -1,0 +1,14 @@
+# Shared "axioms" manifesto strip that appears at the bottom of every page.
+# The `intro_html` field allows inline HTML (e.g. an <a> link). Keep it short.
+
+kicker: "≈ Manifesto"
+intro_html: >-
+  I believe in Federico Ardila’s axioms from
+  <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf"
+    class="link" target="_blank" rel="noopener">Todos Cuentan</a>:
+
+items:
+  - "Mathematical potential is distributed equally among different groups, irrespective of geographic, demographic, and economic boundaries."
+  - "Everyone can have joyful, meaningful, and empowering mathematical experiences."
+  - "Mathematics is a powerful, malleable tool that can be shaped and used differently by various communities to serve their needs."
+  - "Every student deserves to be treated with dignity and respect."

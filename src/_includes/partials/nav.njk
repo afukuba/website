@@ -1,0 +1,18 @@
+{%- set is_home = (page_name == "home") -%}
+{%- set home_href = is_home and "#home" or "../index.html#home" -%}
+{%- set works_href = is_home and "#works" or "../index.html#works" -%}
+{%- set cv_href = is_home and "cv/" or "./" -%}
+<!-- ─────── NAV ─────── -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="{{ home_href }}" class="brand"{% if is_home %} data-nav="home"{% endif %}>
+      <span class="brand__mark">{{ site.brand.mark }}</span>
+      <span class="brand__name">{{ site.brand.name }}</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="{{ home_href }}" class="nav__link"{% if is_home %} data-nav="home"{% endif %}>Home</a>
+      <a href="{{ works_href }}" class="nav__link"{% if is_home %} data-nav="works"{% endif %}>Works</a>
+      <a href="{{ cv_href }}" class="nav__link{% if page_name == 'cv' %} is-active{% endif %}"{% if page_name == 'cv' %} aria-current="page"{% endif %}>CV</a>
+    </nav>
+  </div>
+</header>
