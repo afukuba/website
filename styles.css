@@ -252,10 +252,16 @@ main {
 .prose p a, a.link {
   color: var(--color-ink); font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(var(--color-primary) 0 0) no-repeat 0 88% / 100% 35%;
-  padding: 0 2px;
+  padding: 0 2px 4px;
+  background-image:
+    linear-gradient(var(--color-primary) 0 0),
+    radial-gradient(circle, var(--color-primary) 40%, transparent 42%);
+  background-size: 100% 0%, 6px 6px;
+  background-repeat: no-repeat, repeat-x;
+  background-position: 0 100%, 0 100%;
+  transition: background-size .28s cubic-bezier(.2,.7,.2,1);
 }
-.prose p a:hover, a.link:hover { background-size: 100% 100%; }
+.prose p a:hover, a.link:hover { background-size: 100% 100%, 6px 6px; }
 
 /* Dense / metadata contexts: the highlight band misreads as strikethrough at
    smaller type, so swap to a primary-coloured underline. */
