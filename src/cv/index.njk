@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+permalink: /cv/index.html
+page_name: cv
+page_title: "Patrick O’Melveny — CV"
+body_class: page-cv
+css_prefix: "../"
+include_script: false
+---
+
+<section aria-labelledby="cv-title">
+  <div class="container cv">
+    <div class="section-head">
+      <span class="kicker">∇ CV</span>
+      <h1 id="cv-title">Curriculum vitæ</h1>
+      <span class="rule"></span>
+    </div>
+
+    <div class="cv__top">
+      <div class="cv__id">
+        <p class="cv__name">{{ cv.id.name }}</p>
+        <ul class="cv__id-list">
+          {%- for item in cv.id.items %}
+          <li><span class="k">{{ item.key }}</span><span class="v">{{ item.value_html | safe }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <aside class="cv__actions">
+        <a class="cv__btn" href="{{ cv.actions.pdf_href }}" download>
+          <span class="material-symbols-outlined">download</span>
+          {{ cv.actions.pdf_label }}
+        </a>
+        <button class="cv__btn cv__btn--ghost" type="button" onclick="window.print()">
+          <span class="material-symbols-outlined">print</span>
+          Print
+        </button>
+        <p class="cv__note">{{ cv.actions.note }}</p>
+      </aside>
+    </div>
+
+    {%- for block_key in ["education", "research", "teaching", "experience"] %}
+    {%- set block = cv[block_key] %}
+    <div class="cv__block">
+      <h2 class="cv__h">{{ block.glyph }} &nbsp;{{ block.heading }}</h2>
+      {%- for entry in block.entries %}
+      {% include "partials/cv-entry.njk" %}
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+
+    <div class="cv__twocol">
+      <div class="cv__block">
+        <h2 class="cv__h">{{ cv.presentations.glyph }} &nbsp;{{ cv.presentations.heading }}</h2>
+        {%- for entry in cv.presentations.entries %}
+        {% set tight = cv.presentations.tight %}
+        {% include "partials/cv-entry.njk" %}
+        {%- endfor %}
+      </div>
+
+      <div class="cv__block">
+        <h2 class="cv__h">{{ cv.conferences.glyph }} &nbsp;{{ cv.conferences.heading }}</h2>
+        <ul class="cv__conflist">
+          {%- for c in cv.conferences.items %}
+          <li><span class="y">{{ c.year }}</span> {{ c.text_html | safe }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv__block">
+      <h2 class="cv__h">{{ cv.outreach.glyph }} &nbsp;{{ cv.outreach.heading }}</h2>
+      {%- for entry in cv.outreach.entries %}
+      {% include "partials/cv-entry.njk" %}
+      {%- endfor %}
+    </div>
+
+    <div class="cv__block">
+      <h2 class="cv__h">{{ cv.skills.glyph }} &nbsp;{{ cv.skills.heading }}</h2>
+      <div class="cv__skills">
+        {%- for row in cv.skills.rows %}
+        <div class="cv__skillrow">
+          <span class="cv__skillkey">{{ row.key }}</span>
+          <div class="cv__skillvals">
+            {%- for v in row.values %}
+            <span class="tag{% if v.variant %} tag--{{ v.variant }}{% endif %}">{{ v.text }}</span>
+            {%- endfor %}
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>

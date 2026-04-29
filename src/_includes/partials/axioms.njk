@@ -1,0 +1,15 @@
+<!-- ─────── AXIOMS (shared contact strip) ─────── -->
+<section class="axioms" aria-label="Axioms">
+  <div class="axioms__head">
+    <span class="axioms__kicker">{{ axioms.kicker }}</span>
+    <p>{{ axioms.intro_html | safe }}</p>
+  </div>
+  <div class="axioms__grid">
+    {%- for item in axioms.items %}
+    <div class="axiom">
+      <span class="axiom__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+      <p>{{ item }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

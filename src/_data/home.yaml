@@ -1,0 +1,172 @@
+# Content for the home page (hero, about, works).
+# Plain text is safe to edit. Fields ending in `_html` accept inline HTML
+# (e.g. <strong>, <em>, <a href="...">) — leave them alone if unsure.
+#
+# A few compound words use a "non-breaking hyphen" (‑, U+2011) to prevent
+# awkward line wraps (e.g. "log‑concavity"). Copy-paste is safest.
+
+hero:
+  eyebrow: "Mathematician · he/him"
+  heading:
+    prefix: "I study "
+    accent: "matroids,"   # rendered in coral
+    suffix: " geometry, and topology."
+  lede:
+    - "I’m a Ph.D. student in mathematics at the University of Washington. I completed my M.A. in mathematics at San Francisco State University in 2023."
+    - "My work sits where combinatorics meets algebraic geometry, with long detours through topology whenever the picture calls for one. At UW, I teach undergraduate mathematics and serve as a graduate student representative."
+  chips:
+    - { text: "Combinatorics",     variant: "primary" }
+    - { text: "Algebraic Geometry", variant: "teal" }
+    - { text: "Topology",           variant: "sage" }
+    - { text: "Matroids" }
+  portrait:
+    src: "img/patrick-picture.jpg"
+    alt: "A moderately outdated picture of Patrick, as is traditional."
+    caption: "b. 1995 · SF, CA"
+    aria_label: "Portrait of Patrick O’Melveny"
+
+about:
+  kicker: "∂ About"
+  heading: "About me"
+  prose_html:
+    - >-
+      My name is <strong>Patrick O’Melveny</strong> (he/him). I’m a Ph.D. student in mathematics at
+      the <a href="https://math.washington.edu/people/patrick-omelveny" class="link" target="_blank"
+        rel="noopener">University of Washington</a>, and I completed my M.A. in mathematics at San Francisco
+      State University in 2023.
+    - >-
+      My master’s thesis under <a href="https://sites.google.com/view/rossd" class="link" target="_blank"
+        rel="noopener">Dusty Ross</a> gave a new proof of the log‑concavity of characteristic
+      polynomials of matroids. I’m interested in <strong>combinatorics</strong>,
+      <strong>algebraic geometry</strong>, and <strong>topology</strong>, especially when ideas from each
+      sharpen the others.
+    - >-
+      In past lives, I’ve been a software engineer and a music teacher. I still think counterpoint and
+      compilers have a lot to say about mathematical structure, and I enjoy bringing that perspective into my
+      teaching.
+  facts_heading: "Quick facts"
+  facts_glyph: "∈"
+  facts:
+    - { key: "Based",  value_html: "Seattle, WA" }
+    - { key: "Now",    value_html: "Ph.D. student in Mathematics, UW" }
+    - { key: "Thesis", value_html: "Log‑concavity of characteristic polynomials of matroids" }
+    - { key: "Email",  value_html: '<a href="mailto:p0@uw.edu" class="link">p0@uw.edu</a>' }
+
+works:
+  kicker: "∑ Works"
+  heading: "Papers & writing"
+  intro: >-
+    A running list of research papers, theses, and expository notes — some polished, some still very much
+    drafts that I update occasionally. If you want to talk about any of these, my inbox is open.
+
+  groups:
+    - count: "02 · Research"
+      title: "Papers"
+      glyph: "∫"
+      items:
+        - variant: "teal"
+          idx: "01"
+          title: "Mixed Volumes of Normal Complexes"
+          href: "https://arxiv.org/abs/2301.05278"
+          meta:
+            prefix: "with "
+            names:
+              - { name: "Lauren Nowak", url: "https://www.laurennowak.com/" }
+              - { name: "Dusty Ross",   url: "https://sites.google.com/view/rossd" }
+          abstract: >-
+            We study mixed volumes of a class of simplicial complexes associated to matroids and show how they
+            refine classical Hodge–Riemann style inequalities in combinatorial contexts.
+          tags:
+            - { text: "Combinatorics", variant: "teal" }
+            - { text: "Matroids" }
+            - { text: "Preprint" }
+          year: "2024"
+          kind: "Paper · Preprint"
+          cta: { icon: "picture_as_pdf", label: "PDF", href: "https://arxiv.org/abs/2301.05278" }
+
+        - variant: "primary"
+          idx: "02"
+          title: "A Geometric Proof of the Log‑Concavity of Characteristic Polynomials of Matroids"
+          href: "https://docs.google.com/viewer?url=https://github.com/pvomelveny/MAThesis/blob/master/thesis.pdf?raw=true"
+          meta:
+            names:
+              - { name: "solo" }
+            suffix: " · Master’s thesis, San Francisco State University"
+          abstract: >-
+            A new, largely geometric argument for log‑concavity of the characteristic polynomial of a
+            (loopless) matroid, leaning on the combinatorial Hodge theory developed by Adiprasito, Huh, and Katz.
+          tags:
+            - { text: "Thesis",            variant: "hot" }
+            - { text: "Algebraic Geometry", variant: "sage" }
+            - { text: "Matroids" }
+          year: "2023"
+          kind: "Thesis"
+          cta:
+            icon: "description"
+            label: "Read"
+            href: "https://docs.google.com/viewer?url=https://github.com/pvomelveny/MAThesis/blob/master/thesis.pdf?raw=true"
+
+    - count: "03 · Notes"
+      title: "Expository writing"
+      glyph: "∇"
+      items:
+        - variant: "sage"
+          idx: "03"
+          title: "A Whirlwind Tour of the p‑adic Numbers"
+          href: "papers/padic_project.pdf"
+          meta:
+            prefix: "written for "
+            names:
+              - { name: "Math 770: Real Analysis II" }
+            suffix: ", San Francisco State University"
+          abstract: >-
+            A brief introduction to the construction and analytic properties of the p‑adic numbers —
+            though, perhaps, through a slightly more algebraic viewpoint than one would expect in an analysis class.
+          tags:
+            - { text: "Analysis",     variant: "sage" }
+            - { text: "Number Theory" }
+            - { text: "Course Note" }
+          year: "2022"
+          kind: "Note · Course"
+          cta: { icon: "picture_as_pdf", label: "PDF", href: "papers/padic_project.pdf" }
+
+        - variant: "teal"
+          idx: "04"
+          title: "The Euler Characteristic on 2‑Manifolds"
+          href: "papers/Euler_Characteristic_Project.pdf"
+          meta:
+            prefix: "with "
+            names:
+              - { name: "John Gallagher, Henry Guerrero‑Duarte" }
+            suffix: " · final project for Math 450: Topology"
+          abstract: >-
+            We introduce and prove the simple case of the Euler characteristic on orientable 2‑manifolds, with
+            a short history and motivation vis‑à‑vis graph theory.
+          tags:
+            - { text: "Topology",    variant: "teal" }
+            - { text: "Graph Theory" }
+            - { text: "Course Note" }
+          year: "2021"
+          kind: "Note · Final Project"
+          cta: { icon: "picture_as_pdf", label: "PDF", href: "papers/Euler_Characteristic_Project.pdf" }
+
+        - variant: "primary"
+          idx: "05"
+          title: "Game Theory Final Project: Rent Negotiation"
+          href: "papers/game_theory_paper.pdf"
+          meta:
+            prefix: "with "
+            names:
+              - { name: "Montse Cordero" }
+            suffix: " · final project for Math 491: Game Theory"
+          abstract: >-
+            A real‑world application of the game‑theoretic techniques we’d learned so far. In the
+            heart of San Francisco during the pandemic, we were inspired by the rare reversal of rents going on
+            around us. It’s nice to know even math says it’s terrible to be a renter in the Bay Area.
+          tags:
+            - { text: "Applied",     variant: "hot" }
+            - { text: "Game Theory" }
+            - { text: "Course Note" }
+          year: "2020"
+          kind: "Note · Final Project"
+          cta: { icon: "picture_as_pdf", label: "PDF", href: "papers/game_theory_paper.pdf" }
